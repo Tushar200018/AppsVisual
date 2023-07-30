@@ -1,9 +1,6 @@
 // src/components/PieChart.js
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { Dropdown } from "../Shared/Dropdown";
-import { Charts, yParamsLst } from "./SingleVariableChart";
-import { Filter } from "../../Pages/Dashboard";
 
 type ChartProps = {
     chartData: any,

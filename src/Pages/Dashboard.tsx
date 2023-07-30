@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Dropdown } from "../Components/Shared/Dropdown";
 import { AppData, AppDetails } from "../data/webAppData";
-import SingleVariableChart from "../Components/Dashboard/SingleVariableChart";
 import AppChart from "../Components/Dashboard/AppChart";
 
 
