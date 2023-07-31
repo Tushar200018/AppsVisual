@@ -118,7 +118,7 @@ export function Dashboard() {
     },[appData])
 
     return (
-        <div className="mx-auto px-7 lg:px-12 py-10">
+        <div className="mx-auto px-2 sm:px-12 py-10">
 
             <div className="mb-10 text-center md:text-start">
                 <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">Dashboard</h1>

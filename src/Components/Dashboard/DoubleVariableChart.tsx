@@ -12,6 +12,11 @@ type AppChartProps = {
 }
 
 Chart.register(CategoryScale,ArcElement,Title,LinearScale,BarElement,BarController,Tooltip, Legend,PointElement)
+if(window.innerWidth>=640){
+    Chart.defaults.font.size = 12
+}else{
+    Chart.defaults.font.size = 9
+}
 
 const yParamsLst = [
     {text: "Ratings"},
@@ -83,6 +88,22 @@ export default function DoubleVariableChart({appData}:AppChartProps){
 
     const [chartComponent,setChartComponent] = useState(ChartComponentMap[chartType.text])
 
+    const handleResize = ()=>{
+        if(window.innerWidth>=640){
+            Chart.defaults.font.size = 12
+        }else{
+            Chart.defaults.font.size = 9
+        }
+    }
+    
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+      
     useEffect(()=>{
         setChartComponent(ChartComponentMap[chartType.text])
     },[chartType,ChartComponentMap])
@@ -114,8 +135,8 @@ export default function DoubleVariableChart({appData}:AppChartProps){
     },[appData,yData1,yData2,yParam1,yParam2])
 
     return (
-        <div className="w-full flex items-center flex-col py-5 px-2 mt-8 md:px-4 shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-            <div className="flex flex-wrap justify-center mb-12">
+        <div className="w-full flex items-center flex-col py-5 px-0 mt-8 sm:px-4 sm:shadow sm:ring-1 sm:ring-black sm:ring-opacity-5 md:rounded-lg">
+            <div className="flex flex-wrap justify-center mb-5">
                 <div className="md:mr-10 mr-2 mb-5 min-w-[10rem]">
                     <Dropdown
                         title="Chart Type"

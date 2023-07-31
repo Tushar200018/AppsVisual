@@ -41,7 +41,8 @@ function BarGraph({ chartData,yParam }:ChartProps) {
                     }
                 }
             }
-          }
+          },
+          
         }}
       />
     </div>
